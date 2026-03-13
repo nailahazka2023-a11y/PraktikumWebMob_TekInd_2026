@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Latihan 1 - Kalkulator Lingkaran</title>
+    <link rel="stylesheet" href="Latihan 1.css" />
+  </head>
+  <body>
+
+      <header>
+      <h1>Latihan 1 - Function</h1>
+      <p>Dibuat oleh: Nailah Azka Iftinah</p>
+      <p>23051430026</p>
+    </header>
+
+    <div class="container">
+      <h2>Kalkulator Lingkaran</h2>
+      <p>Hitung Luas dan Keliling Lingkaran</p>
+
+      <div class="form-box">
+        <label for="jariJari">Masukkan Jari-jari:</label>
+        <input type="number" id="jariJari" placeholder="Contoh: 7" min="1" />
+        <button onclick="hitung()">Hitung</button>
+      </div>
+
+      <div class="hasil">
+        <h3>Hasil Perhitungan</h3>
+        <p id="luas">Luas : -</p>
+        <p id="keliling">Keliling : -</p>
+      </div>
+
+      <div class="rekap">
+        <h3>Rekap Perhitungan</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Jari-jari</th>
+              <th>Luas</th>
+              <th>Keliling</th>
+            </tr>
+          </thead>
+          <tbody id="rekapTable">
+            <tr id="emptyRow">
+              <td colspan="4" class="empty">Belum ada data</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="Latihan 1.js"></script>
+  </body>
+</html>

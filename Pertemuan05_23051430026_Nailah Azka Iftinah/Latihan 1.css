@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #E0B0FF;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #555;
+  font-size: 17px;
+  margin: 3px 0;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin: 30px auto;
+}
+
+.container h2 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+p {
+  color: #555;
+}
+
+.form-box {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #E0B0FF;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #E0B0FF;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 80%;
+}
+
+button:hover {
+  background: #c97df5;
+}
+
+.hasil {
+  margin-top: 25px;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.hasil h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.hasil p {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  margin: 4px 0;
+}
+
+.rekap {
+  margin-top: 25px;
+}
+
+.rekap h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th {
+  background: #E0B0FF;
+  color: #333;
+  padding: 9px;
+  text-align: center;
+}
+
+td {
+  padding: 9px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+  text-align: center;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.empty {
+  color: #aaa;
+  font-style: italic;
+}

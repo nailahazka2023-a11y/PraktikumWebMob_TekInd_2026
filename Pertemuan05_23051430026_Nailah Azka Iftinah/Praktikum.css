@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+header {
+  background: #E0B0FF;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  font-size: 22px;
+  color: #333;
+}
+
+header p {
+  color: #555;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 18px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  border-color: #E0B0FF;
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  background: #E0B0FF;
+  color: #333;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+button:hover {
+  background: #c97df5;
+}
+
+.hasil-box {
+  margin-top: 18px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.hasil-box h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.hasil-box p {
+  color: #555;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* BADGE */
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.badge-abu   { background: #f0f0f0; color: #555; }
+.badge-merah { background: #ffe0e0; color: #c0392b; }
+.badge-hijau { background: #e8f5e9; color: #27ae60; }
+
+/* INFO MESIN */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #888;
+  font-size: 13px;
+}
+
+.status-running   { color: #27ae60; font-weight: bold; }
+.status-breakdown { color: #e74c3c; font-weight: bold; }
+
+/* TABEL */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+th {
+  background: #E0B0FF;
+  color: #333;
+  padding: 9px;
+  text-align: center;
+}
+
+td {
+  padding: 9px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+  text-align: center;
+}
+
+tr:last-child td { border-bottom: none; }
+
+.badge-aman {
+  background: #e8f5e9;
+  color: #27ae60;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-menipis {
+  background: #ffe0e0;
+  color: #c0392b;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}

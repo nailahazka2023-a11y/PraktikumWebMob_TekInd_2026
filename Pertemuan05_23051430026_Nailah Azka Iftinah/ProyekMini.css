@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  width: 480px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: #666;
+  margin: 0;
+}
+
+/* KARTU STATUS MESIN */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #f0fff4;
+  border: 1px solid #b2dfdb;
+}
+
+.status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #27ae60;
+  flex-shrink: 0;
+}
+
+.status-dot.idle {
+  background: #27ae60;
+}
+
+.status-dot.running {
+  background: #27ae60;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+#statusMesin {
+  font-weight: bold;
+  color: #1e8449;
+  font-size: 15px;
+}
+
+/* PROGRESS */
+.progress-label {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.progressBox {
+  width: 100%;
+  background: #ddd;
+  border-radius: 8px;
+  height: 16px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: #27ae60;
+  transition: width 0.3s;
+}
+
+/* SECTION */
+.section-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 15px 0 8px;
+}
+
+/* ANTRIAN */
+.antrian-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.antrian-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.antrian-item .job-id {
+  font-weight: bold;
+  color: #9b59b6;
+  width: 40px;
+}
+
+.antrian-item .job-nama {
+  flex: 1;
+  color: #333;
+  padding-left: 8px;
+}
+
+.antrian-item .job-durasi {
+  font-size: 12px;
+  color: #888;
+  background: #f0f0f0;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.antrian-item.baru {
+  border-left: 3px solid #9b59b6;
+  background: #f5f0ff;
+}
+
+/* TOMBOL */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #E0B0FF;
+  color: #333;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+button:hover {
+  background: #c97df5;
+}
+
+/* LOG */
+.logItem {
+  background: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #444;
+  border-left: 3px solid #27ae60;
+}
+
+.logItem.baru {
+  border-left: 3px solid #9b59b6;
+  background: #f5f0ff;
+}
+
+.logItem.selesai {
+  border-left: 3px solid #27ae60;
+  background: #f0fff4;
+  font-weight: bold;
+}

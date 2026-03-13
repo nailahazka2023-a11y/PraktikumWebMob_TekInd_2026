@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 5 - Function, Array, dan Object</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg-ungu { background-color: #E0B0FF; }
+        .btn-ungu { background-color: #9b59b6; color: white; }
+        .btn-ungu:hover { background-color: #7d3fb5; color: white; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="bg-ungu text-dark py-4 shadow">
+        <div class="container text-center">
+            <h1 class="fw-bold mb-1">Praktikum 5 - Function, Array, dan Object</h1>
+            <p class="mb-0">Dibuat oleh: Nailah Azka Iftinah</p>
+            <p class="mb-0">23051430026</p>
+        </div>
+    </header>
+
+    <main class="container my-5" style="max-width: 700px;">
+
+        <!-- LANGKAH 1 -->
+        <div class="card shadow-sm mb-3">
+            <div class="card-body text-center">
+                <p class="fw-semibold mb-1">Kalkulator Daya Mesin</p>
+                <p class="text-muted small mb-1">Rumus yang digunakan</p>
+                <p class="fw-bold mb-0" style="color:#7d3fb5;">P = V × I</p>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label text-muted small">Tegangan (Volt)</label>
+                    <input type="number" class="form-control" id="tegangan" placeholder="220" min="1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted small">Arus (Ampere)</label>
+                    <input type="number" class="form-control" id="arus" placeholder="10" min="1">
+                </div>
+                <button onclick="hitungDayaMesin()" class="btn btn-ungu w-100 fw-bold">
+                    Hitung Energi
+                </button>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-3">
+            <div class="card-body text-center">
+                <p class="fw-semibold mb-2">Hasil Perhitungan</p>
+                <div id="hasilDaya" style="display:none; font-size:1rem; font-weight:600;"></div>
+                <p id="placeholder" class="text-muted small mb-0">
+                    Masukkan tegangan dan arus lalu tekan Hitung atau Enter
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-5">
+            <div class="card-body">
+                <p class="fw-semibold text-center mb-3">Rekap Perhitungan Energi</p>
+                <table class="table table-bordered text-center mb-0">
+                    <thead style="background-color:#E0B0FF;">
+                        <tr><th>Rumus</th><th>Hasil</th></tr>
+                    </thead>
+                    <tbody id="rekapDaya">
+                        <tr id="emptyDaya">
+                            <td colspan="2" class="text-muted fst-italic py-3">Belum ada data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- LANGKAH 2 -->
+        <div class="card shadow-sm mb-3">
+            <div class="card-body text-center">
+                <p class="fw-semibold mb-1">Daftar Produk Cacat</p>
+                <p class="text-muted small mb-3" id="isiArray"></p>
+                <button onclick="tampilkanCacat()" class="btn btn-ungu w-100 fw-bold mb-3">
+                    Tampilkan Data
+                </button>
+                <div id="hasilCacat" style="display:none;" class="p-2 rounded"></div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-5">
+            <div class="card-body">
+                <p class="fw-semibold text-center mb-3">Rekap Data Cacat</p>
+                <table class="table table-bordered text-center mb-0">
+                    <thead style="background-color:#E0B0FF;">
+                        <tr><th>No</th><th>Kode Cacat</th></tr>
+                    </thead>
+                    <tbody id="rekapCacat">
+                        <tr id="emptyCacat">
+                            <td colspan="2" class="text-muted fst-italic py-3">Belum ada data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- LANGKAH 3 -->
+        <div class="card shadow-sm mb-3">
+            <div class="card-body text-center">
+                <p class="fw-semibold mb-1">Data Mesin Produksi</p>
+                <p class="text-muted small mb-3">Object <code>mesinA</code> — informasi lengkap mesin</p>
+
+                <div class="text-start mb-3 px-2" style="font-size:14px; line-height:2;">
+                    <div class="border-bottom py-1">ID : <strong>M-01</strong></div>
+                    <div class="border-bottom py-1">Nama : <strong>Injection Molding 50 Ton</strong></div>
+                    <div class="border-bottom py-1">Merk : <strong>Toshiba</strong></div>
+                    <div class="border-bottom py-1">Tahun : <strong>2018</strong></div>
+                    <div class="border-bottom py-1">Kecepatan Max : <strong>200 mm/s</strong></div>
+                    <div class="py-1">Tekanan Max : <strong>150 bar</strong></div>
+                </div>
+
+                <button onclick="tampilkanMesin()" class="btn btn-ungu w-100 fw-bold mb-3">
+                    Tampilkan Data
+                </button>
+                <div id="hasilMesin" style="display:none;" class="p-2 rounded"></div>
+            </div>
+        </div>
+
+        <!-- LANGKAH 4 -->
+        <div class="card shadow-sm mb-3">
+            <div class="card-body text-center">
+                <p class="fw-semibold mb-1">Cek Stok Gudang</p>
+                <p class="text-muted small mb-3">
+                    Array of Objects <code>gudangMaterial</code> — pengecekan stok otomatis
+                </p>
+                <button onclick="tampilkanStok()" class="btn btn-ungu w-100 fw-bold mb-3">
+                    Tampilkan Rekap Stok
+                </button>
+                <div id="hasilStok" style="display:none;" class="p-2 rounded"></div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-5">
+            <div class="card-body">
+                <p class="fw-semibold text-center mb-3">Rekap Stok Gudang</p>
+                <table class="table table-bordered text-center align-middle mb-0">
+                    <thead style="background-color:#E0B0FF;">
+                        <tr>
+                            <th>Kode</th>
+                            <th>Nama</th>
+                            <th>Stok</th>
+                            <th>Satuan</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rekapStok">
+                        <tr id="emptyStok">
+                            <td colspan="5" class="text-muted fst-italic py-3">Belum ada data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Praktikum.js"></script>
+
+    <script>
+        // =============================================
+        // LANGKAH 1
+        // =============================================
+        function hitungDayaMesin() {
+            let t = Number(document.getElementById("tegangan").value);
+            let a = Number(document.getElementById("arus").value);
+
+            if (!t || !a || t <= 0 || a <= 0) {
+                alert("Tegangan dan arus harus lebih dari 0!");
+                return;
+            }
+
+            let hasil = hitungDaya(t, a);
+
+            let statusText, statusColor, bgColor;
+            if (hasil > 2000) {
+                statusText  = "⚠ Daya Tinggi";
+                statusColor = "#d97706";
+                bgColor     = "#fef3c7";
+            } else {
+                statusText  = "✓ Daya Normal";
+                statusColor = "#059669";
+                bgColor     = "#d1fae5";
+            }
+
+            let hasilDiv = document.getElementById("hasilDaya");
+            document.getElementById("placeholder").style.display = "none";
+            hasilDiv.style.display = "block";
+            hasilDiv.style.background = bgColor;
+            hasilDiv.style.color = statusColor;
+            hasilDiv.style.padding = "12px";
+            hasilDiv.style.borderRadius = "8px";
+            hasilDiv.innerHTML =
+                "P = V × I = " + t + " × " + a + " = <strong>" + hasil + " Watt</strong>" +
+                "<br><span style='font-size:0.9rem;'>" + statusText + "</span>";
+
+            console.log("===== HASIL PERHITUNGAN DAYA =====");
+            console.log("Tegangan: " + t + " Volt");
+            console.log("Arus: " + a + " Ampere");
+            console.log("Daya: " + hasil + " Watt");
+            console.log("==================================");
+
+            const emptyDaya = document.getElementById("emptyDaya");
+            if (emptyDaya) emptyDaya.remove();
+
+            const row = document.createElement("tr");
+            row.innerHTML =
+                "<td>P = V × I</td>" +
+                "<td><strong style='color:" + statusColor + ";'>" + hasil + " Watt</strong>" +
+                " <span style='font-size:0.8rem; color:" + statusColor + ";'>(" + statusText + ")</span></td>";
+            document.getElementById("rekapDaya").appendChild(row);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("tegangan").addEventListener("keydown", function (e) {
+                if (e.key === "Enter") { hitungDayaMesin(); }
+            });
+            document.getElementById("arus").addEventListener("keydown", function (e) {
+                if (e.key === "Enter") { hitungDayaMesin(); }
+            });
+            document.getElementById("isiArray").textContent = JSON.stringify(daftarCacat);
+        });
+
+        // =============================================
+        // LANGKAH 2
+        // =============================================
+        function tampilkanCacat() {
+            let hasilDiv = document.getElementById("hasilCacat");
+            hasilDiv.style.display = "block";
+            hasilDiv.style.background = "#e8f5e9";
+            hasilDiv.style.color = "#1e8449";
+            hasilDiv.style.padding = "10px";
+            hasilDiv.style.borderRadius = "8px";
+            hasilDiv.textContent = "Jumlah data cacat = " + daftarCacat.length;
+
+            console.log("Jumlah Cacat: " + daftarCacat.length);
+            console.log("--- Laporan Detail Cacat ---");
+            for (let i = 0; i < daftarCacat.length; i++) {
+                console.log("Item ke-" + (i + 1) + " : " + daftarCacat[i]);
+            }
+
+            const emptyCacat = document.getElementById("emptyCacat");
+            if (emptyCacat) emptyCacat.remove();
+
+            const tbody = document.getElementById("rekapCacat");
+            tbody.innerHTML = "";
+            daftarCacat.forEach(function (item, index) {
+                let row = document.createElement("tr");
+                row.innerHTML =
+                    "<td>" + (index + 1) + "</td>" +
+                    "<td><strong>" + item + "</strong></td>";
+                tbody.appendChild(row);
+            });
+        }
+
+        // =============================================
+        // LANGKAH 3
+        // =============================================
+        function tampilkanMesin() {
+            let hasilDiv = document.getElementById("hasilMesin");
+            hasilDiv.style.display = "block";
+            hasilDiv.style.background = "#e8f5e9";
+            hasilDiv.style.color = "#1e8449";
+            hasilDiv.style.padding = "12px";
+            hasilDiv.style.borderRadius = "8px";
+            hasilDiv.style.textAlign = "left";
+            hasilDiv.style.lineHeight = "2";
+            hasilDiv.style.fontSize = "14px";
+
+            let statusColor = mesinA.status === "Running" ? "#059669" : "#e74c3c";
+
+            hasilDiv.innerHTML =
+                "Nama Mesin : " + mesinA.nama + "<br>" +
+                "Merk : " + mesinA.merk + "<br>" +
+                "Status : <strong style='color:" + statusColor + ";'>" + mesinA.status + "</strong><br>" +
+                "Tekanan Max : " + mesinA.spesifikasi.tekananMax + " bar";
+
+            console.log("Nama Mesin: " + mesinA.nama);
+            console.log("Status: " + mesinA.status);
+            console.log("Tekanan Max: " + mesinA.spesifikasi.tekananMax + " bar");
+            console.log("Status Baru: " + mesinA.status);
+        }
+
+        // =============================================
+        // LANGKAH 4
+        // =============================================
+        function tampilkanStok() {
+            let hasilDiv = document.getElementById("hasilStok");
+            hasilDiv.style.display = "block";
+            hasilDiv.style.background = "#e8f5e9";
+            hasilDiv.style.color = "#1e8449";
+            hasilDiv.style.padding = "10px";
+            hasilDiv.style.borderRadius = "8px";
+            hasilDiv.textContent = "Data gudang berhasil ditampilkan ✓";
+
+            console.log("--- Cek Stok Gudang ---");
+
+            const emptyStok = document.getElementById("emptyStok");
+            if (emptyStok) emptyStok.remove();
+
+            const tbody = document.getElementById("rekapStok");
+            tbody.innerHTML = "";
+
+            gudangMaterial.forEach(function (item) {
+                console.log(item.kode + " - " + item.nama + " : " + item.stok + " " + item.satuan);
+                if (item.stok < 20) {
+                    console.log("  >>> PERINGATAN: Stok " + item.nama + " menipis! Segera PO.");
+                }
+
+                let menipis = item.stok < 20;
+
+                let row = document.createElement("tr");
+                row.style.background = menipis ? "#fff0f0" : "";
+
+                let badge = menipis
+                    ? "<span style='background:#e74c3c; color:white; padding:3px 10px; border-radius:8px; font-size:0.82rem; font-weight:600;'>Stok Menipis ⚠</span>"
+                    : "<span style='background:#d1fae5; color:#059669; padding:3px 10px; border-radius:8px; font-size:0.82rem; font-weight:600;'>Stok Aman ✓</span>";
+
+                row.innerHTML =
+                    "<td>" + item.kode + "</td>" +
+                    "<td>" + item.nama + "</td>" +
+                    "<td><strong style='color:" + (menipis ? "#e74c3c" : "#059669") + ";'>" + item.stok + "</strong></td>" +
+                    "<td>" + item.satuan + "</td>" +
+                    "<td>" + badge + "</td>";
+                tbody.appendChild(row);
+            });
+        }
+    </script>
+
+</body>
+</html>
