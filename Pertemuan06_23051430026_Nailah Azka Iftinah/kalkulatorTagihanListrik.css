@@ -1,16 +1,13 @@
 body {
-    background: linear-gradient(
-        to right,
-        #e8d5f5,
-        #d4b8e8,
-        #c9a8e0
-    );
+    background-color: #e8d5f5;
     min-height: 100vh;
 }
 
 .card-custom {
     border-radius: 10px;
     background-color: white;
+    max-width: 500px;
+    margin: auto;
 }
 
 .hasil-box {

@@ -15,7 +15,7 @@
 <div class="container py-5">
 
     <!-- Header -->
-    <div class="text-center text-white mb-4">
+    <div class="text-center text-black mb-4">
         <h1 class="fw-bold">Proyek Mini_Kalkulator Tagihan Listrik</h1>
         <p class="mb-1">Nailah Azka Iftinah</p>
         <p class="mb-0">NIM: 23051430026</p>
@@ -25,42 +25,32 @@
     <div class="card card-custom shadow-lg p-4">
 
         <!-- Input -->
-        <div class="row g-4">
-            <div class="col-md-6">
-                <label class="form-label fw-semibold">Daya (Watt)</label>
-                <input type="number" id="daya" class="form-control form-control-lg" placeholder="Contoh: 900">
-            </div>
+        <div class="mb-3 text-center">
+            <label class="form-label fw-semibold">Daya (Watt)</label>
+            <input type="number" id="daya" class="form-control form-control-lg" placeholder="Contoh: 900">
+        </div>
 
-            <div class="col-md-6">
-                <label class="form-label fw-semibold">Jam Pemakaian</label>
-                <input type="number" id="jam" class="form-control form-control-lg" placeholder="Contoh: 5">
-            </div>
+        <div class="mb-3 text-center">
+            <label class="form-label fw-semibold">Jam Pemakaian</label>
+            <input type="number" id="jam" class="form-control form-control-lg" placeholder="Contoh: 5">
         </div>
 
         <!-- Hasil -->
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <div class="hasil-box text-center shadow-sm">
-                    <h5>Total Konsumsi Energi</h5>
-                    <h3 id="hasilKwh" class="fw-bold text-primary">0 kWh</h3>
-                </div>
-            </div>
+        <div class="hasil-box text-center shadow-sm mb-3">
+            <h5>Total Konsumsi Energi</h5>
+            <h3 id="hasilKwh" class="fw-bold text-primary">0 kWh</h3>
+        </div>
 
-            <div class="col-md-6">
-                <div class="hasil-box text-center shadow-sm">
-                    <h5>Estimasi Biaya</h5>
-                    <h3 id="hasilBiaya" class="fw-bold text-success">Rp 0</h3>
-                </div>
-            </div>
+        <div class="hasil-box text-center shadow-sm mb-3">
+            <h5>Estimasi Biaya</h5>
+            <h3 id="hasilBiaya" class="fw-bold text-success">Rp 0</h3>
         </div>
 
         <!-- Rekapan -->
-        <div class="mt-4">
-            <div class="card shadow-sm p-3 text-center">
-                <h5>Rekapan Penggunaan Listrik</h5>
-                <p id="rekapText">Belum ada data yang dihitung.</p>
-                <p id="kategori" class="fw-semibold text-secondary">Kategori: -</p>
-            </div>
+        <div class="card shadow-sm p-3 text-center">
+            <h5>Rekapan Penggunaan Listrik</h5>
+            <p id="rekapText">Belum ada data yang dihitung.</p>
+            <p id="kategori" class="fw-semibold text-secondary">Kategori: -</p>
         </div>
 
     </div>
