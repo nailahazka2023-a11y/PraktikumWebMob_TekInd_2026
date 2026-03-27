@@ -1,23 +1,27 @@
 body {
     background: linear-gradient(
         to right,
-        #2c1a4d,
-        #4b2a7a,
-        #7b3fe4
+        #e8d5f5,
+        #d4b8e8,
+        #c9a8e0
     );
     min-height: 100vh;
 }
 
 .card-custom {
     border-radius: 10px;
-    background-color: #f8f5ff;
+    background-color: white;
 }
 
 .hasil-box {
-    background-color: #6a3de8;
+    background-color: #d4b8e8;
     border-radius: 15px;
     padding: 17px;
     color: white;
+}
+
+.rekap-box {
+    text-align: center;
 }
 
 button {

@@ -11,6 +11,16 @@ function hitungListrik() {
     let daya = parseFloat(dayaInput.value) || 0;
     let jam = parseFloat(jamInput.value) || 0;
 
+    // Cegah nilai negatif — reset ke 0 jika user input minus
+    if (daya < 0) {
+        dayaInput.value = 0;
+        daya = 0;
+    }
+    if (jam < 0) {
+        jamInput.value = 0;
+        jam = 0;
+    }
+
     let totalKwh = (daya * jam) / 1000;
     let biaya = totalKwh * 1500;
 
