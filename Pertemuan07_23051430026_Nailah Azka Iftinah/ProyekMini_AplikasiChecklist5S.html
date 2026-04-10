@@ -21,8 +21,38 @@
                     <div class="card-body">
                         <form id="form5S">
                             <div class="mb-3">
+                                <label>Tanggal</label>
+                                <input type="date" id="tanggal" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
                                 <label>Nama Auditor</label>
-                                <input type="text" id="auditor" class="form-control" required>
+                                <select id="auditor" class="form-select" required>
+                                    <option value="">-- Pilih Auditor --</option>
+                                    <option value="Ayu Anjani">Ayu Anjani</option>
+                                    <option value="Hafshah Afifah">Hafshah Afifah</option>
+                                    <option value="Tisa Putri">Tisa Putri</option>
+                                    <option value="Fawwazin Kurnianingtyas">Fawwazin Kurnianingtyas</option>
+                                    <option value="Clara Meilia">Clara Meilia</option>
+                                    <option value="Bayu Permadi">Bayu Permadi</option>
+                                    <option value="Caesar Rosyad">Caesar Rosyad</option>
+                                    <option value="Muhammad Ghani">Muhammad Ghani</option>
+                                    <option value="Rieza Aziz">Rieza Aziz</option>
+                                    <option value="Rafic Wahyu">Rafic Wahyu</option>
+                                    <option value="Lainnya">Lainnya...</option>
+                                </select>
+                            </div>
+                            <!-- Input teks muncul hanya kalau pilih Lainnya -->
+                            <div class="mb-3" id="inputLainnyaDiv" style="display: none;">
+                                <label>Nama Auditor Lainnya</label>
+                                <input type="text" id="auditorLainnya" class="form-control" placeholder="Masukkan nama lengkap">
+                            </div>
+                            <div class="mb-3">
+                                <label>Shift</label>
+                                <select id="shift" class="form-select" required>
+                                    <option value="Pagi">Pagi</option>
+                                    <option value="Siang">Siang</option>
+                                    <option value="Malam">Malam</option>
+                                </select>
                             </div>
                             <!-- CHECKLIST -->
                             <div class="form-check">
@@ -61,6 +91,7 @@
                         <tr>
                             <th>Tanggal</th>
                             <th>Auditor</th>
+                            <th>Shift</th>
                             <th>Skor (%)</th>
                             <th>Aksi</th>
                         </tr>

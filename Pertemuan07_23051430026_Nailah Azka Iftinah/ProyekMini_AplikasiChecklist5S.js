@@ -2,22 +2,54 @@
 const formAudit = document.getElementById('form5S');
 const tabelBody = document.getElementById('tabelAudit');
 const btnHapusSemua = document.getElementById('hapusSemua');
+const selectAuditor = document.getElementById('auditor');
+const inputLainnyaDiv = document.getElementById('inputLainnyaDiv');
+const auditorLainnya = document.getElementById('auditorLainnya');
 
-// Kunci untuk LocalStorage
 const STORAGE_KEY = 'DATA_AUDIT_5S';
 
-// Load data saat halaman dibuka
 document.addEventListener('DOMContentLoaded', function () {
     loadDataFromStorage();
+});
+
+// Tampilkan input teks kalau pilih Lainnya
+selectAuditor.addEventListener('change', function () {
+    if (this.value === 'Lainnya') {
+        inputLainnyaDiv.style.display = 'block';
+        auditorLainnya.required = true;
+    } else {
+        inputLainnyaDiv.style.display = 'none';
+        auditorLainnya.required = false;
+        auditorLainnya.value = '';
+    }
 });
 
 // 2. Event Listener: Submit Form
 formAudit.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const auditor = document.getElementById('auditor').value;
+    const tanggal = document.getElementById('tanggal').value;
+    const shift   = document.getElementById('shift').value;
 
-    // Hitung skor dari checkbox yang dicentang
+    // Ambil nilai auditor, kalau Lainnya pakai input teks
+    const auditorSelect = document.getElementById('auditor').value;
+    const auditor = auditorSelect === 'Lainnya'
+        ? document.getElementById('auditorLainnya').value
+        : auditorSelect;
+
+    // Validasi duplikat
+    const dataExisting = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    const isDuplikat = dataExisting.some(item =>
+        item.tanggal === tanggal &&
+        item.auditor === auditor &&
+        item.shift === shift
+    );
+
+    if (isDuplikat) {
+        alert(`${auditor} sudah ditugaskan di shift ${shift} pada tanggal ${tanggal}!`);
+        return;
+    }
+
     const seiri    = document.getElementById('seiri').checked;
     const seiton   = document.getElementById('seiton').checked;
     const seiso    = document.getElementById('seiso').checked;
@@ -29,16 +61,17 @@ formAudit.addEventListener('submit', function (event) {
 
     const skor = (jumlahCentang / 5) * 100;
 
-    // Buat Object Data
     const dataBaru = {
         id: Date.now(),
-        tanggal: new Date().toLocaleDateString('id-ID'),
+        tanggal: tanggal,
         auditor: auditor,
+        shift: shift,
         skor: skor
     };
 
     saveData(dataBaru);
     formAudit.reset();
+    inputLainnyaDiv.style.display = 'none';
     loadDataFromStorage();
 });
 
@@ -57,6 +90,7 @@ function renderTable(data) {
         row.innerHTML = `
             <td>${item.tanggal}</td>
             <td>${item.auditor}</td>
+            <td>${item.shift}</td>
             <td>${item.skor}%</td>
             <td>
                 <button class="btn btn-sm btn-danger"
