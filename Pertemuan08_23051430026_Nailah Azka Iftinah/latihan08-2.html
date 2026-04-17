@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 8 - Latihan 2 Filter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Data Karyawan (Filter Kota)</h2>
+
+        <div class="text-center mb-4">
+            <button id="btnLoad" class="btn btn-primary">
+                Muat Data dari API
+            </button>
+            <button id="btnAdd" class="btn btn-success">
+                Tambah Karyawan Baru (POST)
+            </button>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text">Filter Kota</span>
+                    <input type="text" id="inputFilter" class="form-control" placeholder='Cari kota (contoh: "s")'>
+                    <button id="btnFilter" class="btn btn-warning">Cari</button>
+                    <button id="btnReset" class="btn btn-secondary">Reset</button>
+                </div>
+                <small class="text-muted ms-1">Masukkan huruf/kata untuk filter nama kota</small>
+            </div>
+        </div>
+
+        <div id="loading" class="d-none text-center my-3">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p>Menghubungi Server...</p>
+        </div>
+
+        <div id="containerKaryawan" class="row"></div>
+    </div>
+
+    <script src="latihan08-2.js"></script>
+
+</body>
+</html>

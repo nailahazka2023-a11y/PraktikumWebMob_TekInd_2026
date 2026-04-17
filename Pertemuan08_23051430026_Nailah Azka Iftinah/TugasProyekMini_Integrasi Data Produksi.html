@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Laporan Insiden</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-5">
+
+<div class="text-center mb-5">
+    <h2 class="fw-bold text-danger">
+        Dashboard Laporan Insiden Produksi
+    </h2>
+    <p class="text-muted">
+        Sistem Monitoring Insiden dibuat oleh:
+        <strong>Nailah Azka Iftinah (NIM 23051430026)</strong>
+    </p>
+</div>
+
+<div class="mb-4 text-center">
+    <button id="btnMuatLaporan" class="btn btn-danger">Muat Laporan</button>
+
+    <button class="btn btn-success ms-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
+        Tambah Insiden
+    </button>
+
+    <button id="btnReset" class="btn btn-secondary ms-2">
+        Reset Data
+    </button>
+
+    <input id="searchInput" class="form-control d-inline w-auto ms-2" placeholder="Cari judul">
+
+    <select id="filterStatus" class="form-select d-inline w-auto ms-2">
+        <option value="semua">Semua Status</option>
+        <option value="Diproses">Diproses</option>
+        <option value="Selesai">Selesai</option>
+        <option value="Tertunda">Tertunda</option>
+    </select>
+
+    <div id="loading" class="spinner-border text-danger d-none ms-2"></div>
+</div>
+
+<div class="row" id="kontenLaporan"></div>
+
+<!-- MODAL OPERATOR -->
+<div class="modal fade" id="modalOperator">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5>Detail Operator</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="isiOperator"></div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL TINDAK LANJUT -->
+<div class="modal fade" id="modalTindak">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5>Tindak Lanjut Insiden</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="isiTindak"></div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL TAMBAH -->
+<div class="modal fade" id="modalTambah">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5>Tambah Laporan Insiden</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <input id="inputJudul" class="form-control mb-2" placeholder="Judul">
+                <textarea id="inputDesk" class="form-control mb-2" placeholder="Deskripsi"></textarea>
+
+                <select id="selectNama" class="form-control mb-2">
+                    <option value="">Pilih Operator</option>
+                    <option>Andi Saputra</option>
+                    <option>Budi Santoso</option>
+                    <option>Citra Lestari</option>
+                    <option>Dedi Prasetyo</option>
+                    <option>Eka Wulandari</option>
+                    <option>Fajar Nugroho</option>
+                    <option>Gina Maharani</option>
+                    <option>Hendra Wijaya</option>
+                    <option>Intan Permata</option>
+                    <option>Joko Susilo</option>
+                </select>
+
+                <input id="inputNama" class="form-control mb-2" placeholder="Atau tulis nama operator baru">
+                <input id="inputEmail" class="form-control mb-2" placeholder="Email">
+                <input id="inputPerusahaan" class="form-control mb-2" placeholder="Perusahaan">
+                <input id="inputKota" class="form-control mb-2" placeholder="Kota">
+
+                <select id="inputShift" class="form-control mb-2">
+                    <option>Pagi</option>
+                    <option>Siang</option>
+                    <option>Malam</option>
+                </select>
+
+                <input type="date" id="inputTanggal" class="form-control mb-2">
+                <input type="time" id="inputJam" class="form-control mb-2">
+
+                <button id="btnSimpan" class="btn btn-success w-100">
+                    Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="TugasProyekMini_Integrasi Data Produksi.html.js"></script>
+
+</body>
+</html>
