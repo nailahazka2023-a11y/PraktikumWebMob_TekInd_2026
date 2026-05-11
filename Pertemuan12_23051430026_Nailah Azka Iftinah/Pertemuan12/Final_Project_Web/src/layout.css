@@ -1,0 +1,68 @@
+/* Layout: Sidebar + Main */
+.appShell {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+.sidebar {
+  width: 280px;
+  background: #0f172a; /* slate-900 */
+  color: #fff;
+  padding: 18px;
+}
+
+.sidebar--collapsed {
+  width: 90px;
+}
+
+.sidebar__logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sidebar__logoBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.sidebar__logoText {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.sidebar__nav {
+  margin-top: 12px;
+}
+
+.sidebar__link {
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.sidebar__link.active {
+  background: rgba(255, 193, 7, 0.18);
+  color: #fff;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+/* Sidebar (HP) */
+.sidebarMobile {
+  padding: 18px;
+  background: #0f172a;
+  color: #fff;
+}
+
+

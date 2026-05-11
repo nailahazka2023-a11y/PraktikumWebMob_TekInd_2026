@@ -1,0 +1,152 @@
+/* Layout: Sidebar + Main */
+.appShell {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px;
+  background: #0f172a; /* hitam kebiruan */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.25);
+  margin: 18px 18px 0 18px;
+}
+
+
+.topbar__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar__badge {
+  padding: 8px 12px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #b45309;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.topbar__heading {
+  font-weight: 900;
+  font-size: 26px;
+  color: #ffffff;
+}
+
+
+
+
+.topbar__sub {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+.topbar__author {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+}
+
+
+.topbar__pill--green {
+
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.22);
+  color: #16a34a;
+}
+
+.topbar__pill--blue {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  color: #1d4ed8;
+}
+
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+}
+
+.topbar__pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+
+.sidebar {
+  width: 280px;
+  background: #0f172a; /* slate-900 */
+  color: #fff;
+  padding: 18px;
+}
+
+.sidebar--collapsed {
+  width: 90px;
+}
+
+.sidebar__logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sidebar__logoBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.sidebar__logoText {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.sidebar__nav {
+  margin-top: 12px;
+}
+
+.sidebar__link {
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.sidebar__link.active {
+  background: rgba(255, 193, 7, 0.18);
+  color: #fff;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+/* Sidebar (HP) */
+.sidebarMobile {
+  padding: 18px;
+  background: #0f172a;
+  color: #fff;
+}
+
+
